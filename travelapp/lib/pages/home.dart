@@ -16,14 +16,12 @@ class HomePage extends StatelessWidget {
     return BottomNavigationBar(
       items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home), 
-          label: 'Home'),
+          icon: Icon(Icons.home),
+          label: 'Home',
+        ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.travel_explore_sharp), 
-          label: 'Travel'),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person), 
-          label: 'Profile'),
+            icon: Icon(Icons.travel_explore_sharp), label: 'Explore'),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
       ],
     );
   }
