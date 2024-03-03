@@ -25,9 +25,13 @@ class WelcomePage extends StatelessWidget {
                 margin: const EdgeInsets.fromLTRB(20.0, 00, 20, 0),
                 color: Colors.white,
                 child: const Text(
-                  'Document your journey anywhere in the world',
+                  'Document your journey anywhere in the world.',
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 33, fontWeight: FontWeight.w900, color: Color.fromARGB(255, 48, 48, 48)),
+                  style: TextStyle(
+                    fontSize: 33,
+                    fontWeight: FontWeight.w900,
+                    color: Color.fromARGB(255, 48, 48, 48),
+                  ),
                 ),
               ),
               Container(
