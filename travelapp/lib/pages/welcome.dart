@@ -12,7 +12,7 @@ class WelcomePage extends StatelessWidget {
           constraints: const BoxConstraints.expand(),
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/background-get-started.jpg"),
+                image: AssetImage("assets/background_image.png"),
                 fit: BoxFit.cover,
                 opacity: 0.9),
           ),
@@ -20,10 +20,13 @@ class WelcomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                padding: const EdgeInsets.all(20.0),
-                height: 200,
-                margin: const EdgeInsets.fromLTRB(20.0, 00, 20, 0),
-                color: Colors.white,
+                padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+                margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(17),
+                        topRight: Radius.circular(17))),
                 child: const Text(
                   'Document your journey anywhere in the world.',
                   textAlign: TextAlign.left,
@@ -35,10 +38,21 @@ class WelcomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                color: Colors.white,
+                  width: double.infinity,
+                  margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  decoration: const BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
+                  child:
+                      const Text('Show your friends exactly wherever you are.')),
+              Container(
                 width: double.infinity,
                 margin: const EdgeInsets.fromLTRB(20.0, 00, 20, 20),
                 padding: const EdgeInsets.all(20.0),
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(17),
+                        bottomRight: Radius.circular(17))),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacement(
@@ -49,10 +63,8 @@ class WelcomePage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 43, 43, 43),
                       foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
+                      backgroundColor: const Color.fromARGB(255, 43, 43, 43),
                       fixedSize: const Size(200, 20),
                       textStyle: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold)),
