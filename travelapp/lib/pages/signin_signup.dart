@@ -19,7 +19,8 @@ class SignInSignUp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                width: double.infinity,
+                padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -28,18 +29,27 @@ class SignInSignUp extends StatelessWidget {
                       ),
                       foregroundColor: Colors.white,
                       backgroundColor: const Color.fromARGB(255, 43, 43, 43),
-                      fixedSize: const Size(300, 20),
                       textStyle: const TextStyle(
                           fontSize: 16, fontWeight: FontWeight.bold)),
-                  child: const Text(
-                    'Create a new account',
-                    style: TextStyle(color: Colors.white),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.flutter_dash,
+                        color: Color.fromARGB(255, 245, 1, 1),
+                      ),
+                      Text(
+                        'Create a new account',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
                   ),
                 ),
               ),
               // const Divider(indent: 30, endIndent: 30,),
               Container(
-                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 40),
+                  width: double.infinity,
+                  padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
@@ -52,9 +62,19 @@ class SignInSignUp extends StatelessWidget {
                         fixedSize: const Size(300, 20),
                         textStyle: const TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold)),
-                    child: const Text(
-                      'Log in',
-                      style: TextStyle(color: Color.fromARGB(255, 43, 43, 43)),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.flutter_dash,
+                          color: Color.fromARGB(255, 245, 1, 1),
+                        ),
+                        Text(
+                          'Log in',
+                          style:
+                              TextStyle(color: Color.fromARGB(255, 43, 43, 43)),
+                        ),
+                      ],
                     ),
                   )),
             ],
