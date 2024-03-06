@@ -41,9 +41,10 @@ class WelcomePage extends StatelessWidget {
                   width: double.infinity,
                   margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                   padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  decoration: const BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
-                  child:
-                      const Text('Show your friends exactly wherever you are.')),
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 255, 255, 255)),
+                  child: const Text(
+                      'Show your friends exactly wherever you are.')),
               Container(
                 width: double.infinity,
                 margin: const EdgeInsets.fromLTRB(20.0, 00, 20, 20),
@@ -63,6 +64,9 @@ class WelcomePage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                       foregroundColor: Colors.white,
                       backgroundColor: const Color.fromARGB(255, 43, 43, 43),
                       fixedSize: const Size(200, 20),

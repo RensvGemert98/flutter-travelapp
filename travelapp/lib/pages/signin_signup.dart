@@ -23,31 +23,38 @@ class SignInSignUp extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                       foregroundColor: Colors.white,
                       backgroundColor: const Color.fromARGB(255, 43, 43, 43),
-                      fixedSize: const Size(200, 20),
+                      fixedSize: const Size(300, 20),
                       textStyle: const TextStyle(
                           fontSize: 16, fontWeight: FontWeight.bold)),
                   child: const Text(
-                    'Signup with Google',
+                    'Create a new account',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
-              const Divider(indent: 30, endIndent: 30,),
+              // const Divider(indent: 30, endIndent: 30,),
               Container(
-                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 150),
+                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 40),
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
                         foregroundColor: Colors.white,
-                        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                        fixedSize: const Size(200, 20),
+                        backgroundColor:
+                            const Color.fromARGB(255, 255, 255, 255),
+                        fixedSize: const Size(300, 20),
                         textStyle: const TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold)),
                     child: const Text(
-                      'Sign in with Google',
-                      style: TextStyle(color: Colors.black),
+                      'Log in',
+                      style: TextStyle(color: Color.fromARGB(255, 43, 43, 43)),
                     ),
                   )),
             ],
