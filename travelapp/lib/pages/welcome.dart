@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travelapp/pages/signin_signup.dart';
+import 'package:travelapp/pages/home.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -9,12 +9,14 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          constraints: const BoxConstraints.expand(),
+          margin: const EdgeInsets.fromLTRB(10, 50, 10, 0),
           decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(30)),
             image: DecorationImage(
-                image: AssetImage("assets/background_image.png"),
-                fit: BoxFit.cover,
-                opacity: 0.9),
+                image: AssetImage("assets/welcome.png"),
+                alignment: Alignment.topCenter,
+                scale: 1.2,
+                fit: BoxFit.scaleDown),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -28,7 +30,7 @@ class WelcomePage extends StatelessWidget {
                         topLeft: Radius.circular(17),
                         topRight: Radius.circular(17))),
                 child: const Text(
-                  'Document your journey anywhere in the world.',
+                  'Welcome',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 33,
@@ -38,45 +40,96 @@ class WelcomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                  width: double.infinity,
-                  margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 255, 255, 255)),
-                  child: const Text(
-                      'Show your friends exactly wherever you are.')),
-              Container(
                 width: double.infinity,
-                margin: const EdgeInsets.fromLTRB(20.0, 00, 20, 20),
-                padding: const EdgeInsets.all(20.0),
+                margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
                 decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(17),
-                        bottomRight: Radius.circular(17))),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const SignInSignUp(),
-                      ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      foregroundColor: Colors.white,
-                      backgroundColor: const Color.fromARGB(255, 43, 43, 43),
-                      fixedSize: const Size(200, 20),
-                      textStyle: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold)),
-                  child: const Text(
-                    'Get Started',
-                  ),
+                    color: Color.fromARGB(255, 255, 255, 255)),
+                alignment: Alignment.center,
+                child: const Text(
+                  'Document your journey anywhere you go.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 23),
                 ),
-              )
+              ),
+              const SizedBox(height: 100),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          foregroundColor: Colors.white,
+                          backgroundColor:
+                              const Color.fromARGB(255, 0, 17, 255),
+                          textStyle: const TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Sign in',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  // const Divider(indent: 30, endIndent: 30,),
+                  Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 0, 17, 255))),
+                            foregroundColor: Colors.white,
+                            backgroundColor:
+                                const Color.fromARGB(255, 255, 255, 255),
+                            fixedSize: const Size(300, 20),
+                            textStyle: const TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold)),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.flutter_dash,
+                              color: Color.fromARGB(255, 245, 1, 1),
+                            ),
+                            Text(
+                              'Sign up with google',
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 0, 17, 255)),
+                            ),
+                          ],
+                        ),
+                      )),
+                ],
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
