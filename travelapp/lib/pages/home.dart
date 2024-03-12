@@ -30,8 +30,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 80,
               width: 350,
-              child: Text(
-                  "This is day 5 of your journey in South Africa. ",
+              child: Text("This is day 5 of your journey in South Africa. ",
                   style: TextStyle(fontSize: 20, color: Color(0xff3D3D3D))),
             ),
             Container(
@@ -64,9 +63,8 @@ class HomePage extends StatelessWidget {
               ),
             ),
             ClipRRect(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(20),
               child: SizedBox(
-                // margin: const EdgeInsets.symmetric(vertical: 20),
                 height: 165,
                 child: ListView(
                   // This next line does the trick.
@@ -74,31 +72,36 @@ class HomePage extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       width: 320,
-                      color: Colors.green.shade300,
-                      child: Image.asset(
-                        "assets/places/macmacfalls.jpg",
-                        fit: BoxFit.cover,
+                      margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          "assets/places/macmacfalls.jpg",
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Container(
                       width: 320,
-                      color: Colors.green.shade300,
-                      child: Image.asset(
-                        "assets/places/lisbonfalls.jpg",
-                        fit: BoxFit.cover,
+                      margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          "assets/places/lisbonfalls.jpg",
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Container(
                       width: 320,
-                      color: Colors.green,
-                    ),
-                    Container(
-                      width: 320,
-                      color: Colors.yellow,
-                    ),
-                    Container(
-                      width: 320,
-                      color: Colors.orange,
+                      margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          "assets/places/lisbonfalls.jpg",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   ],
                 ),
