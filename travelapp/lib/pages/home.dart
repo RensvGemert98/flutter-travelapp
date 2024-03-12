@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Container(
-                      width: 320,
+                      width: 280,
                       margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: 320,
+                      width: 280,
                       margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
@@ -93,12 +93,12 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: 320,
+                      width: 280,
                       margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
-                          "assets/places/lisbonfalls.jpg",
+                          "assets/places/zebra.jpg",
                           fit: BoxFit.cover,
                         ),
                       ),
