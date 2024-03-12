@@ -52,13 +52,13 @@ class WelcomePage extends StatelessWidget {
                   style: TextStyle(fontSize: 23),
                 ),
               ),
-              const SizedBox(height: 100),
+              const SizedBox(height: 70),
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
+                    padding: const EdgeInsets.fromLTRB(20, 5, 20, 0),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushReplacement(
@@ -88,10 +88,12 @@ class WelcomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // const Divider(indent: 30, endIndent: 30,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Container(
                       width: double.infinity,
-                      padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
+                      padding: const EdgeInsets.fromLTRB(20, 5, 20, 10),
                       child: ElevatedButton(
                         onPressed: () {
                           Navigator.pushReplacement(
@@ -112,15 +114,16 @@ class WelcomePage extends StatelessWidget {
                             fixedSize: const Size(300, 20),
                             textStyle: const TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold)),
-                        child: const Row(
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.flutter_dash,
-                              color: Color.fromARGB(255, 245, 1, 1),
+                            Image.asset(
+                              "assets/icons/google.png",
+                              width: 16,
+                              fit: BoxFit.cover,
                             ),
-                            Text(
-                              'Sign up with google',
+                            const Text(
+                              " Sign up with google",
                               style: TextStyle(
                                   color: Color.fromARGB(255, 0, 17, 255)),
                             ),
@@ -129,7 +132,7 @@ class WelcomePage extends StatelessWidget {
                       )),
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
             ],
           ),
         ),
