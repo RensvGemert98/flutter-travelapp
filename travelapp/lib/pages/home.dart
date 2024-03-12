@@ -65,6 +65,8 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Container(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
             margin: const EdgeInsets.symmetric(vertical: 20),
             height: 120,
             child: ListView(
@@ -72,23 +74,23 @@ class HomePage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               children: <Widget>[
                 Container(
-                  width: 160,
+                  width: 320,
                   color: Colors.red,
                 ),
                 Container(
-                  width: 160,
+                  width: 320,
                   color: Colors.blue,
                 ),
                 Container(
-                  width: 160,
+                  width: 320,
                   color: Colors.green,
                 ),
                 Container(
-                  width: 160,
+                  width: 320,
                   color: Colors.yellow,
                 ),
                 Container(
-                  width: 160,
+                  width: 320,
                   color: Colors.orange,
                 ),
               ],
