@@ -15,33 +15,28 @@ class WelcomePage extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage("assets/welcome.png"),
                 alignment: Alignment.topCenter,
-                scale: 1.2,
+                scale: 1.4,
                 fit: BoxFit.scaleDown),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
                 margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(17),
-                        topRight: Radius.circular(17))),
                 child: const Text(
                   'Welcome',
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 33,
+                    fontSize: 28,
                     fontWeight: FontWeight.w900,
-                    color: Color.fromARGB(255, 48, 48, 48),
+                    color: Color(0xff3D3D3D),
                   ),
                 ),
               ),
               Container(
                 width: double.infinity,
-                margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                margin: const EdgeInsets.fromLTRB(20, 0, 20, 10),
                 padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
                 decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 255, 255, 255)),
@@ -49,12 +44,10 @@ class WelcomePage extends StatelessWidget {
                 child: const Text(
                   'Document your journey anywhere you go.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 23),
+                  style: TextStyle(fontSize: 20, color: Color(0xff3D3D3D)),
                 ),
               ),
-              const SizedBox(height: 70),
               Column(
-                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
                     width: double.infinity,
@@ -93,7 +86,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                   Container(
                       width: double.infinity,
-                      padding: const EdgeInsets.fromLTRB(20, 5, 20, 10),
+                      padding: const EdgeInsets.fromLTRB(20, 5, 20, 30),
                       child: ElevatedButton(
                         onPressed: () {
                           Navigator.pushReplacement(
@@ -132,7 +125,6 @@ class WelcomePage extends StatelessWidget {
                       )),
                 ],
               ),
-              const SizedBox(height: 30),
             ],
           ),
         ),
