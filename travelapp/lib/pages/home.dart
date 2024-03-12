@@ -64,36 +64,38 @@ class HomePage extends StatelessWidget {
                   color: Color(0xff3D3D3D)),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-            margin: const EdgeInsets.symmetric(vertical: 20),
-            height: 120,
-            child: ListView(
-              // This next line does the trick.
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                Container(
-                  width: 320,
-                  color: Colors.red,
-                ),
-                Container(
-                  width: 320,
-                  color: Colors.blue,
-                ),
-                Container(
-                  width: 320,
-                  color: Colors.green,
-                ),
-                Container(
-                  width: 320,
-                  color: Colors.yellow,
-                ),
-                Container(
-                  width: 320,
-                  color: Colors.orange,
-                ),
-              ],
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12.0),
+            child: Container(
+              // // padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              // margin: const EdgeInsets.symmetric(vertical: 20),
+              height: 120,
+              child: ListView(
+                // This next line does the trick.
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  Container(
+                    width: 320,
+                    color: Colors.green.shade300,
+                  ),
+                  Container(
+                    width: 320,
+                    color: Colors.blue,
+                  ),
+                  Container(
+                    width: 320,
+                    color: Colors.green,
+                  ),
+                  Container(
+                    width: 320,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    width: 320,
+                    color: Colors.orange,
+                  ),
+                ],
+              ),
             ),
           ),
         ],
