@@ -23,6 +23,7 @@ class HomePage extends StatelessWidget {
             ),
             Container(
               margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+              width: 220,
               child: const Text(
                   "This is day 5 of your journey in South Africa. ",
                   style: TextStyle(fontSize: 16, color: Color(0xff3D3D3D))),
