@@ -10,71 +10,58 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: bottomNavigationBar(),
       body: Container(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+        padding: const EdgeInsets.fromLTRB(20, 40, 20, 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-                height: 50, color: const Color.fromARGB(255, 255, 255, 255)),
-            Container(
-              height: 60,
-              color: const Color.fromARGB(255, 255, 255, 255),
-              child: const Text(
-                "Hi Traveler",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 28,
-                    color: Color(0xff3D3D3D)),
-              ),
+            const Text(
+              "Hi Traveler",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  color: Color(0xff3D3D3D)),
             ),
-            const SizedBox(
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+              child: const Text(
+                  "This is day 5 of your journey in South Africa. ",
+                  style: TextStyle(fontSize: 16, color: Color(0xff3D3D3D))),
+            ),
+            const Text(
+              "Weather Today",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  color: Color(0xff3D3D3D)),
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
               height: 80,
-              width: 350,
-              child: Text("This is day 5 of your journey in South Africa. ",
-                  style: TextStyle(fontSize: 20, color: Color(0xff3D3D3D))),
-            ),
-            Container(
-              height: 30,
-              color: const Color.fromARGB(255, 255, 255, 255),
-              child: const Text(
-                "Weather Today",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
-                    color: Color(0xff3D3D3D)),
-              ),
-            ),
-            Container(
-              height: 100,
-              margin: const EdgeInsets.fromLTRB(0, 15, 0, 15),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.lightBlue.shade100),
             ),
-            Container(
-              height: 45,
-              color: const Color.fromARGB(255, 255, 255, 255),
-              child: const Text(
-                "Current journey",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
-                    color: Color(0xff3D3D3D)),
-              ),
+            const Text(
+              "Current journey",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  color: Color(0xff3D3D3D)),
             ),
+            const SizedBox(height: 10,),
             ClipRRect(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(15), topRight: Radius.circular(15)),
               child: SizedBox(
-                height: 165,
+                height: 220,
                 child: ListView(
-                  // This next line does the trick.
-                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.zero,
                   children: <Widget>[
                     Container(
-                      width: 280,
-                      margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                      height: 180,
+                      margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
                           "assets/places/macmacfalls.jpg",
                           fit: BoxFit.cover,
@@ -82,10 +69,10 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: 280,
-                      margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                      height: 170,
+                      margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
                           "assets/places/lisbonfalls.jpg",
                           fit: BoxFit.cover,
@@ -93,10 +80,10 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: 280,
-                      margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                      height: 170,
+                      margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
                           "assets/places/zebra.jpg",
                           fit: BoxFit.cover,
