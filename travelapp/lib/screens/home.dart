@@ -46,7 +46,7 @@ class _HomePageState extends State<HomeScreen> {
                   color: Colors.lightBlue.shade100),
             ),
             const Text(
-              "Current journey",
+              "Current Journey",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomeScreen> {
               borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15), topRight: Radius.circular(15)),
               child: SizedBox(
-                height: 220,
+                height: 200,
                 child: ListView(
                   padding: EdgeInsets.zero,
                   children: <Widget>[

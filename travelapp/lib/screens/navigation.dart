@@ -27,6 +27,7 @@ class _NavigationState extends State<Navigation> {
       child: Scaffold(
         body: _screens[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
+          elevation: 0,
           currentIndex: _selectedIndex,
           onTap: (int newIndex) {
             setState(() {
