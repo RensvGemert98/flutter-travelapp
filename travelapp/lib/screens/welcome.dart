@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:travelapp/pages/home.dart';
+import 'package:travelapp/screens/home.dart';
+import 'package:travelapp/screens/navigation.dart';
 
-class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +58,7 @@ class WelcomePage extends StatelessWidget {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const HomePage(),
+                            builder: (context) => const Navigation(),
                           ),
                         );
                       },
@@ -92,7 +93,7 @@ class WelcomePage extends StatelessWidget {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const HomePage(),
+                              builder: (context) => const HomeScreen(),
                             ),
                           );
                         },

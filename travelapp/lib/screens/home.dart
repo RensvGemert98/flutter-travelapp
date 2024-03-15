@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:travelapp/components/bottom_nav_bar.dart';
 
 //stl
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: bottomNavigationBar(),
       body: Container(
         padding: const EdgeInsets.fromLTRB(20, 40, 20, 20),
         child: Column(
@@ -49,7 +52,9 @@ class HomePage extends StatelessWidget {
                   fontSize: 24,
                   color: Color(0xff3D3D3D)),
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             ClipRRect(
               borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15), topRight: Radius.circular(15)),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travelapp/pages/welcome.dart';
+import 'package:travelapp/screens/welcome.dart';
 
 void main() {
   runApp(const MyTravelApp());
@@ -12,7 +12,7 @@ class MyTravelApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WelcomePage(),
+      home: WelcomeScreen(),
     );
   }
 }
