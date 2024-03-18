@@ -8,7 +8,7 @@ class Signup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 230, 230, 230),
+      backgroundColor: const Color.fromARGB(255, 239, 239, 239),
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(
@@ -26,7 +26,7 @@ class Signup extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.w900),
         ),
         foregroundColor: const Color(0xff3D3D3D),
-        backgroundColor: const Color.fromARGB(255, 230, 230, 230),
+        backgroundColor: const Color.fromARGB(255, 239, 239, 239),
       ),
       body: Container(
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
@@ -34,7 +34,8 @@ class Signup extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              height: 180,
+              height: 140,
+              width: 280,
               margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
@@ -58,7 +59,7 @@ class Signup extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+                    borderRadius: BorderRadius.circular(10.0),
                     side: const BorderSide(
                       color: Color.fromARGB(255, 0, 17, 255),
                     ),
@@ -79,7 +80,8 @@ class Signup extends StatelessWidget {
                     ),
                     const Text(
                       " Sign up with google",
-                      style: TextStyle(color: Color.fromARGB(255, 0, 17, 255)),
+                      style: TextStyle(
+                          fontSize: 14, color: Color.fromARGB(255, 0, 17, 255)),
                     ),
                   ],
                 ),
@@ -95,7 +97,10 @@ class Signup extends StatelessWidget {
                   indent: 20,
                   endIndent: 20,
                 )),
-                Text("OR"),
+                Text(
+                  "OR",
+                  style: TextStyle(fontSize: 10),
+                ),
                 Expanded(
                   child: Divider(
                     indent: 20,
@@ -108,14 +113,35 @@ class Signup extends StatelessWidget {
               height: 10,
             ),
             Container(
-              margin: const EdgeInsets.fromLTRB(20, 10, 20, 20),
-              height: 200,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15), color: Colors.white),
+              margin: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+              height: 180,
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15),
+                  ),
+                  color: Colors.white),
               child: const Column(
                 children: [
                   SizedBox(
-                    height: 20,
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 10,
+                    ),
+                    child: SizedBox(
+                      height: 40,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          fillColor: Color.fromARGB(255, 239, 239, 239),
+                          filled: true,
+                          border: InputBorder.none,
+                          hintText: 'Name',
+                        ),
+                      ),
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
@@ -124,11 +150,12 @@ class Signup extends StatelessWidget {
                     child: SizedBox(
                       height: 40,
                       child: TextField(
+                        autofocus: false,
                         decoration: InputDecoration(
-                          fillColor: Color.fromARGB(255, 230, 230, 230),
+                          fillColor: Color.fromARGB(255, 239, 239, 239),
                           filled: true,
                           border: InputBorder.none,
-                          hintText: 'Name',
+                          hintText: 'Email',
                         ),
                       ),
                     ),
@@ -143,24 +170,7 @@ class Signup extends StatelessWidget {
                       child: TextField(
                         autofocus: false,
                         decoration: InputDecoration(
-                          fillColor: Color.fromARGB(255, 230, 230, 230),
-                          filled: true,
-                          border: InputBorder.none,
-                          hintText: 'Email',
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20,
-                    ),
-                    child: SizedBox(
-                      height: 40,
-                      child: TextField(
-                        autofocus: false,
-                        decoration: InputDecoration(
-                          fillColor: Color.fromARGB(255, 230, 230, 230),
+                          fillColor: Color.fromARGB(255, 239, 239, 239),
                           filled: true,
                           border: InputBorder.none,
                           hintText: 'Password',
@@ -170,7 +180,33 @@ class Signup extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            Container(
+                alignment: Alignment.center,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Signin(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(15),
+                        bottomRight: Radius.circular(15),
+                      ),
+                    ),
+                    foregroundColor: Colors.white,
+                    backgroundColor: const Color.fromARGB(255, 0, 119, 255),
+                    fixedSize: const Size(280, 20),
+                    textStyle: const TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                  child: const Text("Create account"),
+                ))
           ],
         ),
       ),
