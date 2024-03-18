@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travelapp/screens/home.dart';
-import 'package:travelapp/screens/navigation.dart';
+import 'package:travelapp/screens/signin.dart';
+import 'package:travelapp/screens/signup.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -58,7 +58,42 @@ class WelcomeScreen extends StatelessWidget {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const Navigation(),
+                            builder: (context) => const Signup(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                              side: const BorderSide(
+                                  color: Color.fromARGB(255, 0, 17, 255))),
+                          foregroundColor: Colors.white,
+                          backgroundColor:
+                              const Color.fromARGB(255, 255, 255, 255),
+                          fixedSize: const Size(300, 20),
+                          textStyle: const TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Create an account",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 0, 17, 255)),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.fromLTRB(20, 5, 20, 30),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Signin(),
                           ),
                         );
                       },
@@ -82,48 +117,6 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.fromLTRB(20, 5, 20, 30),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomeScreen(),
-                            ),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15.0),
-                                side: const BorderSide(
-                                    color: Color.fromARGB(255, 0, 17, 255))),
-                            foregroundColor: Colors.white,
-                            backgroundColor:
-                                const Color.fromARGB(255, 255, 255, 255),
-                            fixedSize: const Size(300, 20),
-                            textStyle: const TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              "assets/icons/google.png",
-                              width: 16,
-                              fit: BoxFit.cover,
-                            ),
-                            const Text(
-                              " Sign up with google",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 0, 17, 255)),
-                            ),
-                          ],
-                        ),
-                      )),
                 ],
               ),
             ],
