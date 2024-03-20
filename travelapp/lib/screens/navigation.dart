@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelapp/screens/camera.dart';
 import 'package:travelapp/screens/diary.dart';
 import 'package:travelapp/screens/home.dart';
 import 'package:iconsax/iconsax.dart';
@@ -18,7 +19,7 @@ class _NavigationState extends State<Navigation> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const DiaryScreen(),
-    const DiaryScreen(),
+    const CameraScreen(),
     const MapScreen(),
     const ProfileScreen(),
   ];
