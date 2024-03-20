@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-//stl
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -12,7 +11,7 @@ class _HomePageState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(20, 40, 20, 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,17 +54,19 @@ class _HomePageState extends State<HomeScreen> {
             const SizedBox(
               height: 10,
             ),
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-              child: SizedBox(
-                height: 200,
+            SizedBox(
+              height: 600, // Set a specific height for the ListView
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15)),
                 child: ListView(
+                  physics: const NeverScrollableScrollPhysics(),
                   padding: EdgeInsets.zero,
-                  children: <Widget>[
+                  children: [
                     Container(
-                      height: 180,
-                      margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      height: 170,
+                      margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
