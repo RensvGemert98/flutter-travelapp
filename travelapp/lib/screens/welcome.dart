@@ -7,38 +7,40 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Center(
         child: Container(
-          margin: const EdgeInsets.fromLTRB(10, 50, 10, 0),
+          height: screenHeight,
+          width: screenWidth * 0.9,
+          margin: const EdgeInsets.fromLTRB(20, 50, 20, 0),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(30)),
             image: DecorationImage(
-                image: AssetImage("assets/welcome.png"),
-                alignment: Alignment.topCenter,
-                scale: 1.4,
-                fit: BoxFit.scaleDown),
+              image: AssetImage("assets/welcome.png"),
+              alignment: Alignment.topCenter,
+            ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
-                margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: const Text(
-                  'Welcome',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.w900,
-                    color: Color(0xff3D3D3D),
-                  ),
+              const Text(
+                'Welcome',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w900,
+                  color: Color(0xff3D3D3D),
                 ),
+              ),
+              Container(
+                height: screenHeight * 0.05,
               ),
               Container(
                 width: double.infinity,
                 margin: const EdgeInsets.fromLTRB(20, 0, 20, 10),
-                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
                 decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 255, 255, 255)),
                 alignment: Alignment.center,
@@ -52,7 +54,7 @@ class WelcomeScreen extends StatelessWidget {
                 children: [
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.fromLTRB(20, 5, 20, 0),
+                    padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushReplacement(
@@ -87,7 +89,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.fromLTRB(20, 5, 20, 30),
+                    padding: const EdgeInsets.fromLTRB(0, 5, 0, 30),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushReplacement(

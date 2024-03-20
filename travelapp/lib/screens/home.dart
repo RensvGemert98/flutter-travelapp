@@ -10,9 +10,13 @@ class HomeScreen extends StatefulWidget {
 class _HomePageState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(20, 40, 20, 20),
+        scrollDirection: Axis.vertical,
+        padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -20,12 +24,12 @@ class _HomePageState extends State<HomeScreen> {
               "Hi Traveler",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 24,
+                  fontSize: 32,
                   color: Color(0xff3D3D3D)),
             ),
             Container(
               margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
-              width: 220,
+              width: screenWidth * 0.6,
               child: const Text(
                   "This is day 5 of your journey in South Africa. ",
                   style: TextStyle(fontSize: 16, color: Color(0xff3D3D3D))),
@@ -39,7 +43,7 @@ class _HomePageState extends State<HomeScreen> {
             ),
             Container(
               margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
-              height: 80,
+              height: screenHeight * 0.23,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.lightBlue.shade100),
@@ -51,21 +55,21 @@ class _HomePageState extends State<HomeScreen> {
                   fontSize: 24,
                   color: Color(0xff3D3D3D)),
             ),
-            const SizedBox(
-              height: 10,
+            Container(
+              height: screenHeight * 0.01,
             ),
             SizedBox(
-              height: 600, // Set a specific height for the ListView
               child: ClipRRect(
                 borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15)),
                 child: ListView(
                   physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
                   padding: EdgeInsets.zero,
                   children: [
                     Container(
-                      height: 170,
+                      height: screenHeight * 0.2,
                       margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
@@ -76,7 +80,7 @@ class _HomePageState extends State<HomeScreen> {
                       ),
                     ),
                     Container(
-                      height: 170,
+                      height: screenHeight * 0.2,
                       margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
@@ -87,7 +91,7 @@ class _HomePageState extends State<HomeScreen> {
                       ),
                     ),
                     Container(
-                      height: 170,
+                      height: screenHeight * 0.2,
                       margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),

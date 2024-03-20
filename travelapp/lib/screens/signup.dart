@@ -7,6 +7,9 @@ class Signup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 239, 239, 239),
       appBar: AppBar(
@@ -33,10 +36,9 @@ class Signup extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-              height: 140,
-              width: 280,
-              margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+            SizedBox(
+              height: screenHeight * 0.2,
+              width: screenWidth * 0.8,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
@@ -114,7 +116,7 @@ class Signup extends StatelessWidget {
             ),
             Container(
               margin: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-              height: 180,
+              height: screenHeight * 0.225,
               decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15),
@@ -201,7 +203,7 @@ class Signup extends StatelessWidget {
                     ),
                     foregroundColor: Colors.white,
                     backgroundColor: const Color.fromARGB(255, 0, 119, 255),
-                    fixedSize: const Size(280, 20),
+                    fixedSize: Size(screenWidth * 0.8, 20),
                     textStyle: const TextStyle(
                         fontSize: 14, fontWeight: FontWeight.bold),
                   ),
