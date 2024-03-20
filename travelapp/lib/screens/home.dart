@@ -14,19 +14,25 @@ class _HomePageState extends State<HomeScreen> {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
+        backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
+        toolbarHeight: 80,
+        title: const Text(
+          "Hi Traveler",
+          style: TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 28,
+              color: Color(0xff3D3D3D)),
+        ),
+        foregroundColor: const Color(0xff3D3D3D),
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Hi Traveler",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 32,
-                  color: Color(0xff3D3D3D)),
-            ),
             Container(
               margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
               width: screenWidth * 0.6,
@@ -38,7 +44,7 @@ class _HomePageState extends State<HomeScreen> {
               "Weather Today",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 24,
+                  fontSize: 22,
                   color: Color(0xff3D3D3D)),
             ),
             Container(
@@ -52,7 +58,7 @@ class _HomePageState extends State<HomeScreen> {
               "Current Journey",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 24,
+                  fontSize: 22,
                   color: Color(0xff3D3D3D)),
             ),
             Container(

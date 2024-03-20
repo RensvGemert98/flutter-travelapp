@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class MapScreen extends StatelessWidget {
+  const MapScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
         toolbarHeight: 80,
         title: const Text(
-          "Profile",
+          "Map",
           style: TextStyle(
               fontWeight: FontWeight.w900,
               fontSize: 28,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travelapp/screens/diary.dart';
 import 'package:travelapp/screens/home.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:travelapp/screens/map.dart';
 import 'package:travelapp/screens/profile.dart';
 
 class Navigation extends StatefulWidget {
@@ -18,6 +19,7 @@ class _NavigationState extends State<Navigation> {
     const HomeScreen(),
     const DiaryScreen(),
     const DiaryScreen(),
+    const MapScreen(),
     const ProfileScreen(),
   ];
 
@@ -43,6 +45,8 @@ class _NavigationState extends State<Navigation> {
             BottomNavigationBarItem(icon: Icon(Iconsax.book), label: 'Diary'),
             BottomNavigationBarItem(
                 icon: Icon(Iconsax.camera), label: 'Camera'),
+            BottomNavigationBarItem(
+                icon: Icon(Iconsax.map), label: 'Map'),
             BottomNavigationBarItem(
                 icon: Icon(Iconsax.personalcard), label: 'Profile'),
           ],

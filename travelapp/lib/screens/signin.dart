@@ -13,6 +13,7 @@ class Signin extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 239, 239, 239),
       appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back_ios,
@@ -116,7 +117,7 @@ class Signin extends StatelessWidget {
             ),
             Container(
               margin: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-              height: screenHeight * 0.16,
+              // height: screenHeight * 0.16,
               decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(15),
@@ -146,9 +147,7 @@ class Signin extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20,
-                    ),
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     child: SizedBox(
                       height: 40,
                       child: TextField(
@@ -185,7 +184,7 @@ class Signin extends StatelessWidget {
                     ),
                     foregroundColor: Colors.white,
                     backgroundColor: const Color.fromARGB(255, 0, 119, 255),
-                    fixedSize: Size(screenWidth * 0.8, 20),
+                    fixedSize: Size(screenWidth * 0.78, 20),
                     textStyle: const TextStyle(
                         fontSize: 14, fontWeight: FontWeight.bold),
                   ),
