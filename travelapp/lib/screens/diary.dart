@@ -8,6 +8,7 @@ class DiaryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         surfaceTintColor: Colors.transparent,
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
         toolbarHeight: 80,
@@ -21,6 +22,7 @@ class DiaryScreen extends StatelessWidget {
         ),
         foregroundColor: const Color(0xff3D3D3D),
         elevation: 0,
+        
       ),
       body: CustomScrollView(
         slivers: [

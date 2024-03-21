@@ -13,6 +13,7 @@ class Signup extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 239, 239, 239),
       appBar: AppBar(
+        centerTitle: false,
         surfaceTintColor: Colors.transparent,
         leading: IconButton(
           icon: const Icon(
