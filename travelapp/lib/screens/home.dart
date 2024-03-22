@@ -16,6 +16,7 @@ class _HomePageState extends State<HomeScreen> {
     return PopScope(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           centerTitle: false,
           surfaceTintColor: Colors.transparent,
           backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
