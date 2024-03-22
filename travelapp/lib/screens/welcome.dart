@@ -14,10 +14,12 @@ class WelcomeScreen extends StatelessWidget {
       body: Center(
         child: Container(
           height: screenHeight,
-          width: screenWidth * 0.8,
+          width: screenWidth,
           margin: const EdgeInsets.fromLTRB(20, 50, 20, 0),
           decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(30)),
+            borderRadius: BorderRadius.all(
+              Radius.circular(30),
+            ),
             image: DecorationImage(
               image: AssetImage("assets/welcome.png"),
               alignment: Alignment.topCenter,
@@ -30,16 +32,16 @@ class WelcomeScreen extends StatelessWidget {
                 'Welcome',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 28,
+                  fontSize: 36,
                   fontWeight: FontWeight.w900,
                   color: Color(0xff3D3D3D),
                 ),
               ),
               Container(
-                height: screenHeight * 0.05,
+                height: screenHeight * 0.02,
               ),
               Container(
-                width: double.infinity,
+                width: screenWidth * 0.8,
                 margin: const EdgeInsets.fromLTRB(20, 0, 20, 10),
                 decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 255, 255, 255)),
@@ -49,6 +51,9 @@ class WelcomeScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 20, color: Color(0xff3D3D3D)),
                 ),
+              ),
+              const SizedBox(
+                height: 30,
               ),
               Column(
                 children: [
@@ -119,6 +124,9 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: screenHeight * 0.1,
+                  )
                 ],
               ),
             ],

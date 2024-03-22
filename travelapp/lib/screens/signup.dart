@@ -205,7 +205,7 @@ class Signup extends StatelessWidget {
                     ),
                     foregroundColor: Colors.white,
                     backgroundColor: const Color.fromARGB(255, 0, 119, 255),
-                    fixedSize: Size(screenWidth * 0.78, 20),
+                    fixedSize: Size(screenWidth * 0.8, 20),
                     textStyle: const TextStyle(
                         fontSize: 14, fontWeight: FontWeight.bold),
                   ),
