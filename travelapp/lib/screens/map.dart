@@ -7,6 +7,7 @@ class MapScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: false,
         surfaceTintColor: Colors.transparent,
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
