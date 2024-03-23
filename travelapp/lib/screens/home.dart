@@ -39,24 +39,78 @@ class _HomePageState extends State<HomeScreen> {
               Container(
                 margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
                 width: screenWidth * 0.6,
-                child: const Text(
-                    "This is day 5 of your journey in South Africa. ",
+                child: const Text("Document your journey with us today!",
                     style: TextStyle(fontSize: 16, color: Color(0xff3D3D3D))),
               ),
               const Text(
-                "Weather Today",
+                "Connections",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 22,
                     color: Color(0xff3D3D3D)),
               ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
-                height: screenHeight * 0.23,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.lightBlue.shade100),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      shape: const CircleBorder(),
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: const Color.fromARGB(255, 83, 83, 83),
+                    ),
+                    child: const Icon(Icons.person, color: Colors.white),
+                  ),
+                  const SizedBox(width: 8),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      shape: const CircleBorder(),
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: const Color.fromARGB(255, 83, 83, 83),
+                    ),
+                    child: const Icon(Icons.person, color: Colors.white),
+                  ),
+                  const SizedBox(width: 8),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      shape: const CircleBorder(),
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: const Color.fromARGB(255, 83, 83, 83),
+                    ),
+                    child: const Icon(Icons.person, color: Colors.white),
+                  ),
+                  const SizedBox(width: 8),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      shape: const CircleBorder(),
+                      padding: const EdgeInsets.all(20),
+                      backgroundColor: const Color.fromARGB(255, 83, 83, 83),
+                    ),
+                    child: const Icon(Icons.person, color: Colors.white),
+                  ),
+                ],
               ),
+              const SizedBox(height: 20),
+              Column(
+                children: [
+                  SizedBox(
+                    height: 50,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Search',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        prefixIcon: const Icon(Icons.search),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(height: 20),
               const Text(
                 "Current Journey",
                 style: TextStyle(

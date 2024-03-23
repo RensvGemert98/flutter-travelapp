@@ -14,7 +14,7 @@ class WelcomeScreen extends StatelessWidget {
       body: Center(
         child: Container(
           height: screenHeight,
-          width: screenWidth,
+          width: screenWidth * 0.8,
           margin: const EdgeInsets.fromLTRB(20, 50, 20, 0),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(
