@@ -1,8 +1,16 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:http/http.dart' as http;
 
-class DiaryScreen extends StatelessWidget {
+class DiaryScreen extends StatefulWidget {
   const DiaryScreen({super.key});
+
+  @override
+  State<DiaryScreen> createState() => _DiaryScreenState();
+}
+
+class _DiaryScreenState extends State<DiaryScreen> {
+  List<dynamic> diaries = [];
 
   @override
   Widget build(BuildContext context) {
@@ -24,79 +32,29 @@ class DiaryScreen extends StatelessWidget {
         foregroundColor: const Color(0xff3D3D3D),
         elevation: 0,
       ),
-      body: CustomScrollView(
-        slivers: [
-          SliverPadding(
-            padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
-            sliver: SliverList(
-              delegate: SliverChildListDelegate(
-                [
-                  ListTile(
-                    title: const Text("Diary 1"),
-                    tileColor: Colors.grey.shade100,
-                    leading: const Icon(Iconsax.book),
-                    contentPadding: const EdgeInsets.all(10),
-                  ),
-                  ListTile(
-                    title: const Text("Diary 2"),
-                    tileColor: Colors.grey.shade100,
-                    leading: const Icon(Iconsax.book),
-                    contentPadding: const EdgeInsets.all(10),
-                  ),
-                  ListTile(
-                    title: const Text("Diary 3"),
-                    tileColor: Colors.grey.shade100,
-                    leading: const Icon(Iconsax.book),
-                    contentPadding: const EdgeInsets.all(10),
-                  ),
-                  ListTile(
-                    title: const Text("Diary 4"),
-                    tileColor: Colors.grey.shade100,
-                    leading: const Icon(Iconsax.book),
-                    contentPadding: const EdgeInsets.all(10),
-                  ),
-                  ListTile(
-                    title: const Text("Diary 5"),
-                    tileColor: Colors.grey.shade100,
-                    leading: const Icon(Iconsax.book),
-                    contentPadding: const EdgeInsets.all(10),
-                  ),
-                  ListTile(
-                    title: const Text("Diary 6"),
-                    tileColor: Colors.grey.shade100,
-                    leading: const Icon(Iconsax.book),
-                    contentPadding: const EdgeInsets.all(10),
-                  ),
-                  ListTile(
-                    title: const Text("Diary 7"),
-                    tileColor: Colors.grey.shade100,
-                    leading: const Icon(Iconsax.book),
-                    contentPadding: const EdgeInsets.all(10),
-                  ),
-                  ListTile(
-                    title: const Text("Diary 8"),
-                    tileColor: Colors.grey.shade100,
-                    leading: const Icon(Iconsax.book),
-                    contentPadding: const EdgeInsets.all(10),
-                  ),
-                  ListTile(
-                    title: const Text("Diary 9"),
-                    tileColor: Colors.grey.shade100,
-                    leading: const Icon(Iconsax.book),
-                    contentPadding: const EdgeInsets.all(10),
-                  ),
-                  ListTile(
-                    title: const Text("Diary 10"),
-                    tileColor: Colors.grey.shade100,
-                    leading: const Icon(Iconsax.book),
-                    contentPadding: const EdgeInsets.all(10),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: fetchDiaries,
       ),
+      body: ListView.builder(
+          itemCount: diaries.length,
+          itemBuilder: (context, index) {
+            final diary = diaries[index];
+            final title = diary['title'];
+            return ListTile(
+              title: Text(title),
+            );
+          }),
     );
+  }
+
+  void fetchDiaries() async {
+    const url = 'http://localhost:5141/api/Diary';
+    final uri = Uri.parse(url);
+    final response = await http.get(uri);
+    final body = response.body;
+    final json = jsonDecode(body);
+    setState(() {
+      diaries = json;
+    });
   }
 }

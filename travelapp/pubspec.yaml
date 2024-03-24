@@ -11,10 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   google_maps_flutter:
-  
   google_fonts: ^3.0.1
-
   cupertino_icons: ^1.0.6
+  http:
   iconsax: ^0.0.8
 
 dev_dependencies:
