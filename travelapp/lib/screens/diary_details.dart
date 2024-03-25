@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:travelapp/model/diary.dart';
 
 class DiaryDetailsScreen extends StatefulWidget {
@@ -13,7 +12,6 @@ class DiaryDetailsScreen extends StatefulWidget {
 class _DiaryDetailsScreenState extends State<DiaryDetailsScreen> {
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
