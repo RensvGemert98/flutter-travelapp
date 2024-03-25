@@ -77,7 +77,7 @@ class _DiaryScreenState extends State<DiaryScreen> {
                     height: screenHeight * 0.15,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: const Color.fromARGB(255, 215, 215, 215)),
+                        color: Color.fromARGB(255, 236, 236, 236)),
                     child: ListTile(
                       leading: Text(diaries[index].id.toString()),
                       title: Text(diaries[index].title),
