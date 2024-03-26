@@ -41,6 +41,8 @@ class _MapPageState extends State<MapScreen> {
               child: Text("Loading..."),
             )
           : GoogleMap(
+            myLocationButtonEnabled: true,
+            myLocationEnabled: true,
               mapType: MapType.hybrid,
               onMapCreated: ((GoogleMapController controller) =>
                   _mapController.complete(controller)),
