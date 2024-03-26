@@ -17,7 +17,6 @@ class _MapPageState extends State<MapScreen> {
   final Completer<GoogleMapController> _mapController =
       Completer<GoogleMapController>();
 
-  static const LatLng _pGooglePlex = LatLng(37.4223, -122.0848);
   LatLng? _currentP;
 
   @override
@@ -34,12 +33,11 @@ class _MapPageState extends State<MapScreen> {
               child: Text("Loading..."),
             )
           : GoogleMap(
-            myLocationButtonEnabled: true,
-            myLocationEnabled: true,
+              mapType: MapType.hybrid,
               onMapCreated: ((GoogleMapController controller) =>
                   _mapController.complete(controller)),
-              initialCameraPosition: const CameraPosition(
-                target: _pGooglePlex,
+              initialCameraPosition: CameraPosition(
+                target: _currentP!,
                 zoom: 13,
               ),
               markers: {
@@ -50,17 +48,6 @@ class _MapPageState extends State<MapScreen> {
                 ),
               },
             ),
-    );
-  }
-
-  Future<void> _cameraToPosition(LatLng pos) async {
-    final GoogleMapController controller = await _mapController.future;
-    CameraPosition newCameraPosition = CameraPosition(
-      target: pos,
-      zoom: 13,
-    );
-    await controller.animateCamera(
-      CameraUpdate.newCameraPosition(newCameraPosition),
     );
   }
 
@@ -90,7 +77,7 @@ class _MapPageState extends State<MapScreen> {
         setState(() {
           _currentP =
               LatLng(currentLocation.latitude!, currentLocation.longitude!);
-          _cameraToPosition(_currentP!);
+          //_cameraToPosition(_currentP!);
         });
       }
     });
