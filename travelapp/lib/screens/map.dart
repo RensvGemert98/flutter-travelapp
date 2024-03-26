@@ -13,6 +13,7 @@ class MapScreen extends StatefulWidget {
 
 class _MapPageState extends State<MapScreen> {
   final Location _locationController = Location();
+  late StreamSubscription<LocationData> _locationSubscription;
 
   final Completer<GoogleMapController> _mapController =
       Completer<GoogleMapController>();
@@ -23,6 +24,13 @@ class _MapPageState extends State<MapScreen> {
   void initState() {
     super.initState();
     getLocationUpdates();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    // Cancel the location subscription when the widget is disposed
+    _locationSubscription.cancel();
   }
 
   @override
@@ -51,7 +59,7 @@ class _MapPageState extends State<MapScreen> {
     );
   }
 
-  Future<void> getLocationUpdates() async {
+  void getLocationUpdates() async {
     bool serviceEnabled;
     PermissionStatus permissionGranted;
 
@@ -70,8 +78,8 @@ class _MapPageState extends State<MapScreen> {
       }
     }
 
-    _locationController.onLocationChanged
-        .listen((LocationData currentLocation) {
+    _locationSubscription =
+        _locationController.onLocationChanged.listen((LocationData currentLocation) {
       if (currentLocation.latitude != null &&
           currentLocation.longitude != null) {
         setState(() {
